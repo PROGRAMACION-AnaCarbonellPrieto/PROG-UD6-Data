@@ -187,6 +187,15 @@ public class Data {
         
         return semana;
     }
+    
+    private int verificarNumDias (int numDias) {
+        if (numDias > 30) {
+            return 30;
+        } else if (numDias < 1) {
+            return 1;
+        }
+        return numDias;
+    }
 
     /**
      * Retorna un nou objecte de tipus data que representa la data resultant
@@ -199,11 +208,13 @@ public class Data {
      * @return boolean
      */
     public Data afegir(int numDias) {
+        
         int dia = this.dia;
         int mes = this.mes;
         int any = this.any;
         int diasMes;
         
+        numDias = verificarNumDias(numDias);
         dia += numDias;
         
         while (dia > (diasMes = getDiesMes(mes, any))) {            
@@ -233,6 +244,7 @@ public class Data {
         int mes = this.mes;
         int any = this.any;
         
+        numDias = verificarNumDias(numDias);
         dia -= numDias;
         
         while (dia < 1) {

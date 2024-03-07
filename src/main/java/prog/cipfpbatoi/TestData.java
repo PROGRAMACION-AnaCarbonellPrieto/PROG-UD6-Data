@@ -6,7 +6,7 @@ package prog.cipfpbatoi;
 
 /**
  *
- * @author enana14
+ * @author Ana Carbonell Prieto
  */
 public class TestData {
     
